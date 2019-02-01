@@ -275,7 +275,7 @@ services:
     container_name: "${PROJECT_NAME}_traefik"
     command: -c /dev/null --web --docker --logLevel=INFO
     ports:
-      - '8000:80'
+      - '${TRAEFIK_PORT:-8000}:80'
 #      - '8080:8080' # Dashboard
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -286,3 +286,10 @@ services:
 #    external: true
 ## For Xdebug profiler
 #  files:
+#
+
+### Configure this option if you want to add this services to an external network...
+#networks:
+#  default:
+#    external:
+#      name: ${DOCKER_EXTERNAL_NETWORK_NAME}
