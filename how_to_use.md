@@ -28,3 +28,16 @@ make up
    127.0.0.1    drupal.docker.localhost
    ```
    * This docker project is shipped with more services. In example, there is a [Portainer](https://www.portainer.io/) service accesible at http://portainer.docker.localhost:8000. You must modify the /etc/hosts file in order to use it too.
+   
+
+## Vinculate services to an existing network
+
+If you want to make this services reachables from another network, you can specify the name of this network on the **DOCKER_EXTERNAL_NETWORK_NAME** environment variable (specified in the *.env* file).
+Then you must uncomment the following lines in the *docker-compose.yml* file:
+```bashnetworks:
+### Configure this option if you want to add this services to an external network...
+networks:
+  default:
+    external:
+      name: ${DOCKER_EXTERNAL_NETWORK_NAME}
+```
