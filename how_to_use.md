@@ -1,7 +1,7 @@
 # How to use Docker4Drupal with custom codebase
-This explanation is intended for those Drupal installation based in custom source code. For this, its going to be required a database dump and a source code directory (generated with the [drush archive-dump](https://drushcommands.com/drush-8x/core/archive-dump/)) command.
+This explanation is intended for those Drupal installation based in [custom source code](https://wodby.com/docs/stacks/drupal/local/#mount-my-codebase). For this, its going to be required a database dump and a source code directory (generated with the [drush archive-dump](https://drushcommands.com/drush-8x/core/archive-dump/) command).
 
-> The 'drush archive-dump' does a _backup your code, files, and database into a single file_, a compressed *.tgz* file. This .tgz file mainly contains (1) a directory with the Drupal instance source code (containing **"web/"** directory), (2) a SQL file with a database dump.
+> The 'drush archive-dump' does a _backup your code, files, and database into a single file_, a compressed *.tgz* file. This .tgz file mainly contains (1) a directory with the Drupal instance source code (containing the content from the **"/var/www/html/web/"** directory in server), (2) a SQL file with a database dump.
 
 Let's call the dumpfile as $DRUPAL_DMP.
 
