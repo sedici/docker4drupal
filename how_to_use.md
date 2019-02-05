@@ -22,7 +22,7 @@ cp $DRUPAL_DMP/$DB_DUMP.sql $D4D_DIR/mariadb-init
 ```bash
 make up
 ```
-6. Now you should be able to access to your Drupal application at http://drupal.docker.localhost:8000 location.
+6. Now you should be able to access to your Drupal application at http://drupal.docker.localhost:8000 location (or the port setted at TRAEFIK_PORT variable in the .env file) .
    * If you cannot, you must configure a new host mapping at your */etc/hosts* system file (in order with Drupal documentation at https://wodby.com/docs/stacks/drupal/local/#domains).
    ```bash
    127.0.0.1    drupal.docker.localhost
